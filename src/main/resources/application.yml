@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: profile-list
+  datasource:
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/profiles
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 1000
