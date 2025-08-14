@@ -5,6 +5,8 @@ import org.example.profilelist.entity.Profiles;
 import org.example.profilelist.repository.ProfilesRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProfilesService {
 
@@ -31,6 +33,10 @@ public class ProfilesService {
         existing.setImage(profile.getImage());
 
         return existing;
+    }
+
+    public List<Profiles> findAll() {
+        return profilesRepository.findAll();
     }
 
     public Profiles findById(Long id) {

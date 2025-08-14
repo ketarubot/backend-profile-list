@@ -4,6 +4,8 @@ import org.example.profilelist.entity.Profiles;
 import org.example.profilelist.service.ProfilesService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class ProfileListController {
 
@@ -21,6 +23,11 @@ public class ProfileListController {
     @PutMapping("/api/profile/{id}")
     public Profiles updateProfile(@PathVariable Long id, @RequestBody Profiles profiles) {
         return profilesService.updateProfiles(id, profiles);
+    }
+
+    @GetMapping("/api/profile/list")
+    public List<Profiles> findAllProfiles() {
+        return profilesService.findAll();
     }
 
     @GetMapping("/api/profile/{id}")
